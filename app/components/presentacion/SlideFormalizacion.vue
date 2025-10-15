@@ -1,0 +1,104 @@
+<template>
+    <PresentacionSlide>
+        <div class="animate-fade-in">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-6">
+                El Juego de la Competencia de Creadores 
+                <span class="relative whitespace-nowrap inline-block mx-1">
+                    <span class="absolute bg-white -left-1 -top-0.5 -bottom-0.5 -right-1 -rotate-1"></span>
+                    <span class="relative text-secondary-purple px-1">(C³)</span>
+                </span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+                <div 
+                    v-for="(componente, index) in componentes" 
+                    :key="index"
+                    class="bg-white/10 backdrop-blur-sm border border-white/20 p-4 rounded-xl hover:bg-white/15 transition-all duration-300 hover:scale-105"
+                    :style="{ animationDelay: `${index * 0.1}s` }"
+                >
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary-purple to-secondary-purple rounded-lg flex items-center justify-center text-xl">
+                            {{ componente.icono }}
+                        </div>
+                        <h3 class="text-lg font-bold">{{ componente.titulo }}</h3>
+                    </div>
+                    <p class="text-white/80 text-sm leading-relaxed">{{ componente.descripcion }}</p>
+                </div>
+            </div>
+            
+            <div class="mt-6 bg-gradient-to-r from-primary-purple to-preuai-purple p-0.5 rounded-2xl max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-gradient-start to-gradient-end p-5 rounded-2xl">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl">
+                            🧠
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Comportamiento del Creador</h3>
+                            <p class="text-white/90 text-base leading-relaxed">
+                                Se asume que los creadores <span class="font-bold">no son genios estratégicos</span>. 
+                                Simplemente hacen pequeños cambios locales para ver si su utilidad mejora, un proceso 
+                                llamado <span class="font-bold text-preuai-green">Local Better Response (LBR)</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </PresentacionSlide>
+</template>
+
+<script setup>
+const componentes = [
+    {
+        icono: '👥',
+        titulo: 'Jugadores',
+        descripcion: 'n creadores de contenido'
+    },
+    {
+        icono: '🎬',
+        titulo: 'Acciones (sᵢ)',
+        descripcion: 'El tipo de contenido que un creador i decide producir (representado como un vector)'
+    },
+    {
+        icono: '⭐',
+        titulo: 'Relevancia σ(s,x)',
+        descripcion: 'Qué tan bueno es un contenido s para un usuario x'
+    },
+    {
+        icono: '🔗',
+        titulo: 'Función de Matching',
+        descripcion: 'La plataforma muestra el top-K más relevante, elige uno mediante Softmax'
+    },
+    {
+        icono: '💰',
+        titulo: 'Utilidad del Creador uᵢ(s)',
+        descripcion: 'Ganancia esperada que depende de la probabilidad de matching y la recompensa'
+    },
+    {
+        icono: '🎯',
+        titulo: 'Comportamiento',
+        descripcion: 'Local Better Response (LBR): pequeños cambios para mejorar utilidad'
+    }
+];
+</script>
+
+<style scoped>
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+}
+
+.animate-fade-in > div > div {
+    animation: fade-in 0.6s ease-out backwards;
+}
+</style>
