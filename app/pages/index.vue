@@ -65,6 +65,13 @@ import SlideConclusiones from '~/components/presentacion/SlideConclusiones.vue';
 import SlideReferencias from '~/components/presentacion/SlideReferencias.vue';
 import SlideGracias from '~/components/presentacion/SlideGracias.vue';
 
+useHead({
+    title: 'Presentación de Sistemas Recomendadores',
+    meta: [
+        { name: 'description', content: 'Presentación IIC3636 - Sistemas Recomendadores' },
+    ],
+});
+
 const slides = [
     SlidePortada,
     SlideAgenda,
