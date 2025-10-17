@@ -50,19 +50,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="bg-preuai-green/10 border border-preuai-green/30 p-5 rounded-xl">
-                    <div class="flex items-center justify-center gap-4">
-                        <span class="text-4xl">🚀</span>
-                        <p class="text-lg font-bold text-center">
-                            Este trabajo identifica un problema fundamental y propone una 
-                            <span class="relative whitespace-nowrap inline-block mx-1">
-                                <span class="absolute bg-white -left-0.5 -top-0.5 -bottom-0.5 -right-0.5 -rotate-1"></span>
-                                <span class="relative text-secondary-purple px-0.5">solución elegante, práctica y probada</span>
-                            </span>
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     </PresentacionSlide>
