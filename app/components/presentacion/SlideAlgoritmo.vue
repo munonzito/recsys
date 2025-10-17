@@ -1,79 +1,86 @@
 <template>
     <PresentacionSlide>
         <div class="animate-fade-in">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-8">
-                ¿Cómo se calculan los pesos? 
+            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-6">
+                Actualización Adaptativa
                 <span class="relative whitespace-nowrap inline-block mx-1">
                     <span class="absolute bg-white -left-1 -top-0.5 -bottom-0.5 -right-1 -rotate-1"></span>
-                    <span class="relative text-secondary-purple px-1">Algoritmo Adaptativo</span>
+                    <span class="relative text-secondary-purple px-1">Desglose de Parámetros</span>
                 </span>
             </h2>
             
-            <div class="max-w-5xl mx-auto space-y-6">
-                <div class="bg-gradient-to-r from-primary-purple to-preuai-purple p-0.5 rounded-2xl">
+            <div class="max-w-6xl mx-auto space-y-5 overflow-y-auto max-h-[85vh]">
+                <!-- Fórmula Principal -->
+                <div class="bg-gradient-to-r from-primary-purple to-preuai-purple p-0.5 rounded-2xl animate-in" :style="{ animationDelay: '0s' }">
                     <div class="bg-gradient-to-br from-gradient-start to-gradient-end p-6 rounded-2xl">
                         <div class="flex items-center gap-3 mb-4">
                             <span class="text-3xl">🧮</span>
-                            <h3 class="text-2xl font-bold">Multiplicative Weight Update</h3>
+                            <h3 class="text-2xl font-bold">La Regla de Actualización</h3>
                         </div>
-                        <div class="bg-white/20 backdrop-blur-sm p-6 rounded-xl text-center">
-                            <p class="text-3xl font-mono font-bold mb-2">
+                        <div class="bg-white/20 backdrop-blur-sm p-5 rounded-xl text-center">
+                            <p class="text-2xl font-mono font-bold text-white">
                                 w<sup>(t+1)</sup>(x) ∝ w<sup>(t)</sup>(x) · exp(-α·π̄(x))
                             </p>
                         </div>
                     </div>
                 </div>
-                
-                <div class="grid md:grid-cols-2 gap-5">
-                    <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-5 rounded-xl">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-12 h-12 bg-preuai-correct-green/20 border-2 border-preuai-correct-green rounded-lg flex items-center justify-center text-2xl">
-                                😊
-                            </div>
-                            <h3 class="text-xl font-bold">Usuario Satisfecho</h3>
+
+                <!-- Parámetros en Grid -->
+                <div class="grid md:grid-cols-2 gap-4">
+                    <!-- w^(t+1)(x) -->
+                    <div class="bg-white/10 backdrop-blur-sm border-l-4 border-preuai-green p-5 rounded-lg hover:bg-white/15 transition-all duration-300" :style="{ animationDelay: '0.1s' }">
+                        <div class="flex items-start gap-3 mb-2">
+                            <div class="w-8 h-8 bg-preuai-green rounded-lg flex items-center justify-center flex-shrink-0 text-lg font-bold text-white">📤</div>
+                            <h4 class="text-base font-bold text-white">w<sup>(t+1)</sup>(x): Nuevo Peso</h4>
                         </div>
-                        <p class="text-white/90 text-base leading-relaxed">
-                            Si π̄(x) es <span class="font-bold text-preuai-green">alto</span> 
-                            → su peso <span class="font-bold">w(x) disminuye</span> para la siguiente ronda
+                        <p class="text-white/80 text-sm leading-relaxed ml-11">
+                            Nuestro objetivo. El nuevo peso que tendrá el usuario en el siguiente período de tiempo.
                         </p>
                     </div>
-                    
-                    <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-5 rounded-xl">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-12 h-12 bg-preuai-red/20 border-2 border-preuai-red rounded-lg flex items-center justify-center text-2xl">
-                                😞
-                            </div>
-                            <h3 class="text-xl font-bold">Usuario Insatisfecho</h3>
+
+                    <!-- w^(t)(x) -->
+                    <div class="bg-white/10 backdrop-blur-sm border-l-4 border-secondary-purple p-5 rounded-lg hover:bg-white/15 transition-all duration-300" :style="{ animationDelay: '0.2s' }">
+                        <div class="flex items-start gap-3 mb-2">
+                            <div class="w-8 h-8 bg-secondary-purple rounded-lg flex items-center justify-center flex-shrink-0 text-lg font-bold text-white">⏱️</div>
+                            <h4 class="text-base font-bold text-white">w<sup>(t)</sup>(x): Peso Actual</h4>
                         </div>
-                        <p class="text-white/90 text-base leading-relaxed">
-                            Si π̄(x) es <span class="font-bold text-preuai-red">bajo</span> 
-                            → su peso <span class="font-bold">w(x) aumenta</span> para la siguiente ronda
+                        <p class="text-white/80 text-sm leading-relaxed ml-11">
+                            El peso actual del usuario. Es nuestro punto de partida para calcular el nuevo peso.
                         </p>
                     </div>
-                </div>
-                
-                <div class="bg-white/5 border-2 border-white/30 p-6 rounded-xl">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="text-3xl">🔄</span>
-                        <h3 class="text-xl font-bold">Proceso Iterativo (Algoritmo 1)</h3>
+
+                    <!-- π̄(x) -->
+                    <div class="bg-white/10 backdrop-blur-sm border-l-4 border-preuai-purple p-5 rounded-lg hover:bg-white/15 transition-all duration-300" :style="{ animationDelay: '0.3s' }">
+                        <div class="flex items-start gap-3 mb-2">
+                            <div class="w-8 h-8 bg-preuai-purple rounded-lg flex items-center justify-center flex-shrink-0 text-lg font-bold text-white">📊</div>
+                            <h4 class="text-base font-bold text-white">π̄(x): Utilidad Promedio</h4>
+                        </div>
+                        <p class="text-white/80 text-sm leading-relaxed ml-11">
+                            <span class="font-bold">La señal clave.</span> El nivel de satisfacción que el usuario recibió recientemente. Esto alimenta el sistema.
+                        </p>
                     </div>
-                    <div class="grid md:grid-cols-3 gap-3">
-                        <div class="bg-white/10 p-4 rounded-lg text-center">
-                            <p class="font-bold text-lg mb-2">1️⃣</p>
-                            <p class="text-white/90 text-sm">Desplegar pesos actuales</p>
+
+                    <!-- α -->
+                    <div class="bg-white/10 backdrop-blur-sm border-l-4 border-preuai-red p-5 rounded-lg hover:bg-white/15 transition-all duration-300" :style="{ animationDelay: '0.4s' }">
+                        <div class="flex items-start gap-3 mb-2">
+                            <div class="w-8 h-8 bg-preuai-red rounded-lg flex items-center justify-center flex-shrink-0 text-lg font-bold text-white">🔧</div>
+                            <h4 class="text-base font-bold text-white">α: Parámetro de Aprendizaje</h4>
                         </div>
-                        <div class="bg-white/10 p-4 rounded-lg text-center">
-                            <p class="font-bold text-lg mb-2">2️⃣</p>
-                            <p class="text-white/90 text-sm">Observar utilidad de usuarios</p>
-                        </div>
-                        <div class="bg-white/10 p-4 rounded-lg text-center">
-                            <p class="font-bold text-lg mb-2">3️⃣</p>
-                            <p class="text-white/90 text-sm">Actualizar pesos con fórmula</p>
-                        </div>
+                        <p class="text-white/80 text-sm leading-relaxed ml-11">
+                            Controla la velocidad de cambios. Valor alto = cambios drásticos; valor bajo = ajustes suaves.
+                        </p>
                     </div>
-                    <p class="text-center text-white/70 text-sm mt-4">
-                        ⟲ Sistema que se auto-corrige continuamente
-                    </p>
+
+                    <!-- exp() -->
+                    <div class="bg-white/10 backdrop-blur-sm border-l-4 border-yellow-400 p-5 rounded-lg hover:bg-white/15 transition-all duration-300 md:col-span-2" :style="{ animationDelay: '0.5s' }">
+                        <div class="flex items-start gap-3 mb-2">
+                            <div class="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0 text-lg font-bold text-gray-900">ⓔ</div>
+                            <h4 class="text-base font-bold text-white">exp(): Función Exponencial</h4>
+                        </div>
+                        <p class="text-white/80 text-sm leading-relaxed ml-11">
+                            Lo crucial es el <span class="font-bold">signo negativo en el exponente</span>. Como π̄(x) es positiva, siempre obtenemos un número entre 0 y 1.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

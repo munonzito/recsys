@@ -58,7 +58,11 @@ import SlideEstadoArte from '~/components/presentacion/SlideEstadoArte.vue';
 import SlideFormalizacion from '~/components/presentacion/SlideFormalizacion.vue';
 import SlideSolucionIdea from '~/components/presentacion/SlideSolucionIdea.vue';
 import SlideMecanismos from '~/components/presentacion/SlideMecanismos.vue';
+import SlideUIR from '~/components/presentacion/SlideUIR.vue';
+import SlideSMT from '~/components/presentacion/SlideSMT.vue';
+import SlideHMT from '~/components/presentacion/SlideHMT.vue';
 import SlideAlgoritmo from '~/components/presentacion/SlideAlgoritmo.vue';
+import SlideAlgoritmoRebalanceo from '~/components/presentacion/SlideAlgoritmoRebalanceo.vue';
 import SlideEvaluacionOffline from '~/components/presentacion/SlideEvaluacionOffline.vue';
 import SlideDatasetResults from '~/components/presentacion/SlideDatasetResults.vue';
 import SlideEvaluacionOnline from '~/components/presentacion/SlideEvaluacionOnline.vue';
@@ -84,7 +88,11 @@ const slides = [
     SlideFormalizacion,
     SlideSolucionIdea,
     SlideMecanismos,
+    SlideUIR,
+    SlideSMT,
+    SlideHMT,
     SlideAlgoritmo,
+    SlideAlgoritmoRebalanceo,
     SlideEvaluacionOffline,
     SlideDatasetResults,
     SlideEvaluacionOnline,

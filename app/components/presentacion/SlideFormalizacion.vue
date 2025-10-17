@@ -26,15 +26,51 @@
                 </div>
             </div>
             
-            <div class="mt-6 bg-gradient-to-r from-primary-purple to-preuai-purple p-0.5 rounded-2xl max-w-4xl mx-auto">
-                <div class="bg-gradient-to-br from-gradient-start to-gradient-end p-5 rounded-2xl">
+            <div class="mt-6 space-y-4 max-w-6xl mx-auto">
+                <!-- Bienestar y Utilidad en la misma fila -->
+                <div class="grid md:grid-cols-2 gap-4">
+                    <!-- Bienestar del Usuario -->
+                    <div class="bg-gradient-to-r from-primary-purple to-preuai-purple p-0.5 rounded-2xl">
+                        <div class="bg-gradient-to-br from-gradient-start to-gradient-end p-5 rounded-2xl">
+                            <div class="flex flex-col items-center text-center">
+                                <div class="text-3xl mb-3">📊</div>
+                                <h3 class="text-base font-bold mb-3">Bienestar del Usuario</h3>
+                                <div class="bg-white/10 p-4 rounded-lg mb-3 font-mono text-lg text-white/90 overflow-x-auto w-full">
+                                    W(s) = E<sub>x ~ X</sub>[σ(s<sub>x</sub>, x)]
+                                </div>
+                                <p class="text-white/80 text-xs leading-relaxed">
+                                    El bienestar general es la suma de qué tan relevante es el contenido que cada usuario termina viendo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Utilidad del Creador -->
+                    <div class="bg-gradient-to-r from-secondary-purple to-preuai-purple p-0.5 rounded-2xl">
+                        <div class="bg-gradient-to-br from-gradient-start to-gradient-end p-5 rounded-2xl">
+                            <div class="flex flex-col items-center text-center">
+                                <div class="text-3xl mb-3">💰</div>
+                                <h3 class="text-base font-bold mb-3">Utilidad del Creador</h3>
+                                <div class="bg-white/10 p-4 rounded-lg mb-3 font-mono text-lg text-white/90 overflow-x-auto w-full">
+                                    u<sub>i</sub>(s) = E<sub>x ∈ X</sub>[R(s<sub>i</sub>, x) · P<sub>i</sub>(s, x)]
+                                </div>
+                                <p class="text-white/80 text-xs leading-relaxed">
+                                    La ganancia de un creador es la recompensa que recibe (R), multiplicada por la probabilidad (P) de que su contenido sea mostrado.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comportamiento del Creador -->
+                <div class="bg-preuai-green/10 border border-preuai-green/30 p-4 rounded-2xl">
                     <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl">
+                        <div class="w-10 h-10 bg-preuai-green rounded-lg flex items-center justify-center flex-shrink-0 text-xl">
                             🧠
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold mb-2">Comportamiento del Creador</h3>
-                            <p class="text-white/90 text-base leading-relaxed">
+                            <h3 class="text-lg font-bold mb-2">Comportamiento del Creador</h3>
+                            <p class="text-white/90 text-sm leading-relaxed">
                                 Se asume que los creadores <span class="font-bold">no son genios estratégicos</span>. 
                                 Simplemente hacen pequeños cambios locales para ver si su utilidad mejora, un proceso 
                                 llamado <span class="font-bold text-preuai-green">Local Better Response (LBR)</span>.
