@@ -53,12 +53,14 @@ import SlidePortada from '~/components/presentacion/SlidePortada.vue';
 import SlideAgenda from '~/components/presentacion/SlideAgenda.vue';
 import SlideContexto from '~/components/presentacion/SlideContexto.vue';
 import SlideProblema from '~/components/presentacion/SlideProblema.vue';
+import SlideCreatorStrategies from '~/components/presentacion/SlideCreatorStrategies.vue';
 import SlideEstadoArte from '~/components/presentacion/SlideEstadoArte.vue';
 import SlideFormalizacion from '~/components/presentacion/SlideFormalizacion.vue';
 import SlideSolucionIdea from '~/components/presentacion/SlideSolucionIdea.vue';
 import SlideMecanismos from '~/components/presentacion/SlideMecanismos.vue';
 import SlideAlgoritmo from '~/components/presentacion/SlideAlgoritmo.vue';
 import SlideEvaluacionOffline from '~/components/presentacion/SlideEvaluacionOffline.vue';
+import SlideDatasetResults from '~/components/presentacion/SlideDatasetResults.vue';
 import SlideEvaluacionOnline from '~/components/presentacion/SlideEvaluacionOnline.vue';
 import SlideResultados from '~/components/presentacion/SlideResultados.vue';
 import SlideConclusiones from '~/components/presentacion/SlideConclusiones.vue';
@@ -77,12 +79,14 @@ const slides = [
     SlideAgenda,
     SlideContexto,
     SlideProblema,
+    SlideCreatorStrategies,
     SlideEstadoArte,
     SlideFormalizacion,
     SlideSolucionIdea,
     SlideMecanismos,
     SlideAlgoritmo,
     SlideEvaluacionOffline,
+    SlideDatasetResults,
     SlideEvaluacionOnline,
     SlideResultados,
     SlideConclusiones,
